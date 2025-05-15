@@ -6,22 +6,23 @@
     <meta name="description" content="The Calhoun Cup - A biannual golf tournament among friends since 2025.">
     <meta name="keywords" content="Calhoun Cup, golf tournament, friends golf, Sami Abernathy">
     <title>Calhoun Cup - Our Friendly Golf Tournament</title>
+    <link rel="icon" href="Logo_No_Background.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --color-dark-blue: #2E5077; /* More casual blue */
-            --color-red: #B95F5F;      /* Warmer red */
+            --color-dark-blue: #0F2A4A; /* Deeper blue to match logo */
+            --color-red: #A63232;      /* Stronger red to match logo border */
             --color-gold: #D4AF37;     /* Accent gold */
             --color-white: #FFFFFF;
             --color-off-white: #F7F9FC;
             --color-card-bg: #FFFFFF;
-            --color-text-primary: #2C3E50; /* Softer text color */
+            --color-text-primary: #2C3E50;
             --color-text-secondary: #566573;
             --color-light-gray: #E2E8F0;
-            --color-accent-green: #5D9E7B; /* Adding a green for golf feel */
+            --color-accent-green: #5D9E7B;
             --font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             --font-secondary: 'Playfair Display', Georgia, serif;
             --border-radius: 8px;
@@ -60,7 +61,7 @@
             background-color: var(--color-dark-blue);
             color: var(--color-white);
             padding: 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -70,7 +71,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
+            height: 90px; /* Increased height for larger logo */
         }
 
         .site-title {
@@ -80,33 +81,46 @@
             display: flex;
             align-items: center;
         }
-        .site-title .main-title {
+
+        .logo-image {
             display: block;
-            font-size: 1.9rem;
-            letter-spacing: 1.5px;
+            max-width: 100%;
         }
-        .site-title .sub-title {
-            display: block;
-            font-size: 1.9rem;
+
+        /* Header logo */
+        .header-logo {
+            height: 70px; /* Increased from 50px */
+            width: auto;
+            margin-right: 15px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            transition: var(--transition-standard);
+        }
+        
+        .header-logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer logo */
+        .footer-logo img {
+            height: 65px; /* Increased from 40px */
+            width: auto;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .est-year {
+            font-size: 0.8rem;
             letter-spacing: 1.5px;
             color: var(--color-gold);
-            margin-left: 8px;
-        }
-        .logo-divider {
-            width: 2px;
-            height: 30px;
-            background-color: var(--color-gold);
-            margin: 0 8px;
-        }
-        .est-year {
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-            opacity: 0.8;
+            font-weight: 600;
+            background-color: rgba(15, 42, 74, 0.7);
+            padding: 4px 8px;
+            border-radius: 4px;
             margin-left: 12px;
             align-self: flex-end;
             margin-bottom: 5px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
-
+        
         .main-nav ul {
             list-style: none;
             padding: 0;
@@ -162,7 +176,7 @@
             text-align: center;
         }
         .btn:hover {
-            background-color: #A34D4D;
+            background-color: #8A2828;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
@@ -222,7 +236,7 @@
         }
 
         #hero {
-            background: linear-gradient(rgba(46, 80, 119, 0.85), rgba(46, 80, 119, 0.85)), url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(15, 42, 74, 0.85), rgba(15, 42, 74, 0.85)), url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             color: var(--color-white);
@@ -242,6 +256,14 @@
         .hero-content {
             position: relative;
             z-index: 5;
+        }
+        .hero-logo {
+            margin-bottom: 30px;
+        }
+        .hero-logo img {
+            height: 150px;
+            width: auto;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
         }
         .hero-title-main, .hero-title-sub {
             font-family: var(--font-secondary);
@@ -439,7 +461,7 @@
         .feature-icon {
             width: 40px;
             height: 40px;
-            background-color: rgba(46, 80, 119, 0.1);
+            background-color: rgba(15, 42, 74, 0.1);
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -477,7 +499,7 @@
         .info-card-icon {
             width: 60px;
             height: 60px;
-            background-color: rgba(46, 80, 119, 0.1);
+            background-color: rgba(15, 42, 74, 0.1);
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -510,59 +532,6 @@
             color: var(--color-gold);
             margin-right: 10px;
             min-width: 20px;
-        }
-
-        /* Gallery Section */
-        #gallery {
-            background-color: var(--color-off-white);
-        }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-        .gallery-item {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            position: relative;
-            height: 250px;
-            transition: var(--transition-standard);
-        }
-        .gallery-item:hover {
-            transform: scale(1.03);
-            box-shadow: var(--shadow-medium);
-        }
-        .gallery-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition-standard);
-        }
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.1);
-        }
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-            padding: 20px;
-            color: white;
-            opacity: 0;
-            transition: var(--transition-standard);
-        }
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-        .gallery-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin: 0 0 5px;
-        }
-        .gallery-date {
-            font-size: 0.85rem;
-            opacity: 0.8;
         }
 
         /* Leaderboard Section */
@@ -632,7 +601,7 @@
             background-color: var(--color-off-white);
         }
         .leaderboard-table tr:hover {
-            background-color: rgba(46, 80, 119, 0.05);
+            background-color: rgba(15, 42, 74, 0.05);
         }
         .player-name {
             font-weight: 600;
@@ -649,12 +618,57 @@
         .score-over {
             color: var(--color-red);
         }
+        
+        /* Tournament info styling */
+        .tournament-info {
+            display: flex;
+            justify-content: center;
+            background-color: var(--color-dark-blue);
+            color: var(--color-white);
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            margin: 25px auto 30px;
+            max-width: 900px;
+            box-shadow: var(--shadow-light);
+            flex-wrap: wrap;
+        }
+
+        .tournament-course, .tournament-date, .tournament-location {
+            display: flex;
+            align-items: center;
+            margin: 0 20px;
+            padding: 5px 0;
+        }
+
+        .tournament-info i {
+            color: var(--color-gold);
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        .tournament-course {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .tournament-info {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 25px;
+            }
+            
+            .tournament-course, .tournament-date, .tournament-location {
+                margin: 5px 0;
+            }
+        }
 
         footer {
             background-color: var(--color-dark-blue);
             color: rgba(255,255,255,0.7);
-            padding: 50px 0 20px;
+            padding: 60px 0 20px;
             font-size: 0.95rem;
+            border-top: 5px solid var(--color-red);
         }
         .footer-content {
             display: grid;
@@ -665,19 +679,10 @@
         .footer-logo {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-        }
-        .footer-logo .main-title {
-            font-size: 1.6rem;
-            color: var(--color-white);
-        }
-        .footer-logo .sub-title {
-            font-size: 1.6rem;
-            color: var(--color-gold);
-            margin-left: 8px;
+            margin-bottom: 20px;
         }
         .footer-about p {
-            margin-top: 0;
+            margin-top: 15px;
             line-height: 1.7;
         }
         .footer-heading {
@@ -722,8 +727,8 @@
             margin-top: 20px;
         }
         .social-link {
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             background-color: rgba(255,255,255,0.1);
             border-radius: 50%;
             display: flex;
@@ -751,16 +756,13 @@
             .about-image::before {
                 display: none;
             }
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
         @media (max-width: 992px) {
-            .site-title .main-title,
-            .site-title .sub-title { 
-                font-size: 1.7rem; 
+            .header-logo {
+                height: 60px;
             }
+            
             .main-nav li { 
                 margin-left: 20px; 
             }
@@ -776,6 +778,10 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 30px 20px;
             }
+            
+            .footer-logo img {
+                height: 55px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -790,6 +796,9 @@
             }
             .site-title {
                 margin-bottom: 15px;
+            }
+            .header-logo {
+                height: 50px;
             }
             .main-nav ul {
                 justify-content: center;
@@ -812,6 +821,10 @@
                 padding: 100px 0;
             }
             
+            .hero-logo img {
+                height: 120px;
+            }
+            
             .countdown-container {
                 flex-wrap: wrap;
             }
@@ -826,14 +839,14 @@
             .champion-name { 
                 font-size: 2.2rem; 
             }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
             
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 30px;
+            }
+            
+            .footer-logo img {
+                height: 45px;
             }
         }
 
@@ -841,9 +854,9 @@
             .container { 
                 padding: 0 15px; 
             }
-            .site-title .main-title,
-            .site-title .sub-title { 
-                font-size: 1.5rem; 
+            
+            .header-logo {
+                height: 45px;
             }
             
             .section-title { 
@@ -851,6 +864,10 @@
             }
             .section-subtitle {
                 font-size: 1rem;
+            }
+            
+            .hero-logo img {
+                height: 100px;
             }
             
             .hero-btns .btn {
@@ -876,6 +893,10 @@
             .about-features {
                 grid-template-columns: 1fr;
             }
+            
+            .footer-logo img {
+                height: 40px;
+            }
         }
     </style>
 </head>
@@ -883,9 +904,7 @@
     <header>
         <div class="container header-content">
             <div class="site-title">
-                <span class="main-title">CALHOUN</span>
-                <div class="logo-divider"></div>
-                <span class="sub-title">CUP</span>
+                <img src="Logo_No_Background.png" alt="Calhoun Cup Logo" class="logo-image header-logo">
                 <span class="est-year">EST. 2025</span>
             </div>
             <nav class="main-nav">
@@ -894,7 +913,6 @@
                     <li><a href="#current-champion">Champion</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#tournament-info">Format</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#leaderboard">Leaderboard</a></li>
                 </ul>
             </nav>
@@ -906,10 +924,10 @@
             <div class="container hero-content">
                 <h1 class="hero-title-main">THE CALHOUN</h1>
                 <h1 class="hero-title-sub">CUP</h1>
-                <p class="hero-tagline">A friendly golf tradition among friends, where camaraderie, competition, and cold beverages meet twice a year for unforgettable rounds on beautiful courses.</p>
+                <p class="hero-tagline">The college golf championship that originated with the residents of 385 Calhoun Street</p>
                 <div class="hero-btns">
                     <a href="#leaderboard" class="btn">View Results</a>
-                    <a href="#about" class="btn btn-outline">Our Story</a>
+                    <a href="#about" class="btn btn-outline">The Story</a>
                 </div>
                 
                 <div class="countdown-container">
@@ -942,7 +960,7 @@
                         <div class="champion-year">Spring 2025</div>
                         <div class="champion-name">Sami Abernathy</div>
                         <p>A close round between Sami and Wyatt which initially ended in a tie. After a recount the day after, it was determined Sami won by one stroke.</p>
-                        <a href="#gallery" class="btn">View Highlights</a>
+                        <a href="#leaderboard" class="btn">View Highlights</a>
                         
                         <div class="champion-stat">
                             <div class="stat-item">
@@ -961,11 +979,11 @@
 
         <section id="about">
             <div class="container">
-                <h2 class="section-title">Our Story</h2>
+                <h2 class="section-title">The Beginning</h2>
                 <div class="about-grid">
                     <div class="about-image"></div>
                     <div class="about-content">
-                        <h3>Started Over a Few Beers</h3>
+                        <h3>Started in college at Georgia Tech</h3>
                         <p>The Calhoun Cup began in May 2025 in Oak Island, NC at The Pearl Golf Links.</p>
                         <p>Named after our the road of the house which was lived in by Wyatt, Micah, Sami and Peyton during the 2025-2026 school year.</p>
                         <div class="about-features">
@@ -973,7 +991,7 @@
                                 <div class="feature-icon">
                                     <i class="fas fa-calendar-alt"></i>
                                 </div>
-                                <div class="feature-text">Twice Yearly Events</div>
+                                <div class="feature-text">Twice Yearly Event</div>
                             </div>
                             <div class="feature-item">
                                 <div class="feature-icon">
@@ -985,13 +1003,13 @@
                                 <div class="feature-icon">
                                     <i class="fas fa-trophy"></i>
                                 </div>
-                                <div class="feature-text">Legendary Trophy</div>
+                                <div class="feature-text">Champions Trophy</div>
                             </div>
                             <div class="feature-item">
                                 <div class="feature-icon">
                                     <i class="fas fa-beer"></i>
                                 </div>
-                                <div class="feature-text">Post-Round Celebration</div>
+                                <div class="feature-text">Post-Round Meal</div>
                             </div>
                         </div>
                     </div>
@@ -1002,14 +1020,14 @@
         <section id="tournament-info">
             <div class="container">
                 <h2 class="section-title">Tournament Format</h2>
-                <p class="section-subtitle">How we keep things competitive (but still fun)</p>
+                <p class="section-subtitle">How we keep things competitive</p>
                 <div class="info-cards">
                     <div class="info-card">
                         <div class="info-card-icon">
                             <i class="fas fa-golf-ball"></i>
                         </div>
                         <h4>How We Play</h4>
-                        <p>A weekend of friendly competition with a format designed to give everyone a fighting chance, regardless of handicap.</p>
+                        <p>Straight up stroke play with handicaps to be introduced in the future.</p>
                         <div class="info-details">
                             <div class="info-detail-item">
                                 <i class="fas fa-calendar-day"></i>
@@ -1046,7 +1064,7 @@
                             </div>
                             <div class="info-detail-item">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Next Venue: Pine Creek GC</span>
+                                <span>Next Venue: To Be Determined</span>
                             </div>
                             <div class="info-detail-item">
                                 <i class="fas fa-calendar-check"></i>
@@ -1059,23 +1077,23 @@
                             <i class="fas fa-trophy"></i>
                         </div>
                         <h4>Traditions</h4>
-                        <p>The quirky traditions that make our tournament special and keep us coming back year after year.</p>
+                        <p>The traditions that are present in the tournament.</p>
                         <div class="info-details">
+                            <div class="info-detail-item">
+                                <i class="fa-solid fa-trophy"></i>
+                                <span>Winner's Trophy</span>
+                            </div>
                             <div class="info-detail-item">
                                 <i class="fas fa-crown"></i>
                                 <span>Winner Chooses Next Venue</span>
                             </div>
                             <div class="info-detail-item">
-                                <i class="fas fa-glass-cheers"></i>
-                                <span>Champion's Dinner</span>
+                                <i class="fa-solid fa-question"></i>
+                                <span>To Be Determined</span>
                             </div>
                             <div class="info-detail-item">
-                                <i class="fas fa-shirt"></i>
-                                <span>Ugly Golf Shirt Friday</span>
-                            </div>
-                            <div class="info-detail-item">
-                                <i class="fas fa-times-circle"></i>
-                                <span>Last Place Carries The Bag</span>
+                                <i class="fa-solid fa-question"></i>
+                                <span>To Be Determined</span>
                             </div>
                         </div>
                     </div>
@@ -1086,11 +1104,27 @@
         <section id="leaderboard">
             <div class="container">
                 <h2 class="section-title">Leaderboard Archive</h2>
-                <p class="section-subtitle">A record of glory (and shame) for all eternity</p>
+                <p class="section-subtitle">A record of all rounds</p>
                 
                 <div class="tournament-tabs">
                     <button class="tournament-tab active" data-tournament="spring-2025">Spring 2025</button>
                     <button class="tournament-tab" data-tournament="fall-2025">Fall 2025</button>
+                </div>
+                
+                <!-- Tournament info banner -->
+                <div class="tournament-info">
+                    <div class="tournament-course">
+                        <i class="fas fa-flag"></i>
+                        <span>The Pearl Golf Links</span>
+                    </div>
+                    <div class="tournament-date">
+                        <i class="fas fa-calendar-day"></i>
+                        <span>May 7, 2025</span>
+                    </div>
+                    <div class="tournament-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Calabash, NC</span>
+                    </div>
                 </div>
                 
                 <div class="leaderboard-container">
@@ -1120,13 +1154,13 @@
                                 <td>3</td>
                                 <td class="player-name">Peyton Piper</td>
                                 <td>DNF</td>
-				<td class="score-over">N/A</td>
+                                <td class="score-over">N/A</td>
                             </tr>
                             <tr>
                                 <td>4</td>
                                 <td class="player-name">Micah Rowland</td>
                                 <td>DNF</td>
-				<td class="score-over">N/A</td>
+                                <td class="score-over">N/A</td>
                             </tr>
                         </tbody>
                     </table>
@@ -1140,29 +1174,19 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="footer-logo">
-                        <span class="main-title">CALHOUN</span>
-                        <span class="sub-title">CUP</span>
+                        <img src="Logo_No_Background.png" alt="Calhoun Cup Logo" class="logo-image">
                     </div>
-                    <p>The ultimate expression of friendship through golf. What started as a casual conversation over drinks has evolved into our favorite tradition. This site serves as our collective memory bank for all the great moments, amazing shots, and terrible swings that make up the Calhoun Cup.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
-                    </div>
+                    <p>The Calhoun Cup began in May 2025 on a trip to Oak Island, NC with the first round being held in Calabash, NC at The Pearl Golf Links.</p>
                 </div>
                 <div class="footer-contact">
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="#current-champion">Champion</a></li>
-                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#about">The Story</a></li>
                         <li><a href="#tournament-info">Format</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#leaderboard">Leaderboard</a></li>
                     </ul>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© <span id="currentYear">2025</span> The Calhoun Cup | Crafted with love by the golfers, for the golfers</p>
             </div>
         </div>
     </footer>
@@ -1186,9 +1210,6 @@
                 }
             });
         });
-
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
         
         // Countdown Timer to Fall 2025 Tournament
         function updateCountdown() {
@@ -1234,14 +1255,6 @@
                         });
                     }, 100);
                 }
-            });
-        });
-        
-        // Gallery image modals would go here in a full implementation
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const title = this.querySelector('.gallery-title').textContent;
-                alert(`Full size image of "${title}" would open here in a real implementation!`);
             });
         });
     </script>
